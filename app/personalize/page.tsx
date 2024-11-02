@@ -5,11 +5,23 @@ import LeftButton from "@/components/ui/LeftButton"
 import RightButton from "@/components/ui/RightButton"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import Image from "next/image"
+import InfoModal from './infoModal'
+
+type ModalType = 'name' | 'lock' | 'rarities';
 
 export default function Personalize(){
     const [isEditingName, setIsEditingName] = useState(false);
     const [isLockingPiece, setIsLockingPiece] = useState(false);
     const [name, setName] = useState("FH - Jenny Wealth");
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalType, setModalType] = useState('name');
+
+    const handleInfoClick = (type: ModalType) => {
+        setModalType(type);
+        setModalOpen(true);
+    };
+
 
     return(
         <div className="flex flex-col items-center justify-center">
@@ -41,7 +53,9 @@ export default function Personalize(){
                         <h1 className="underline tracking-[0.3em] text-lg cursor-pointer" onClick={() => setIsEditingName(!isEditingName)}>
                             EDIT NAME
                         </h1>
-                        <Image src={'/assets/question-mark.svg'} height={15} width={20} alt="questions" className=""/>
+                        <Image src={'/assets/question-mark.svg'} height={15} width={20} alt="questions" className=""
+                              onClick={() => handleInfoClick('name')}
+                        />
                     </div>
 
                     {isEditingName && (
@@ -66,7 +80,9 @@ export default function Personalize(){
                         >
                             LOCK YOUR PIECE
                         </h1>
-                        <Image src={'/assets/question-mark.svg'} height={15} width={20} alt="questions" className=""/>
+                        <Image src={'/assets/question-mark.svg'} height={15} width={20} alt="questions" className=""
+                             onClick={() => handleInfoClick('lock')}
+                        />
                     </div>
 
                     {isLockingPiece && (
@@ -99,10 +115,18 @@ export default function Personalize(){
 
 <div className=" flex items-center gap-4">
                                 <h1 className="underline tracking-[0.3em] text-[#977154] text-lg">RARITIES</h1>
-                                <Image src={'/assets/info.svg'} height={15} width={20} alt="questions" className=""/>
+                                <Image src={'/assets/info.svg'} height={15} width={20} alt="questions" className=""
+                                     onClick={() => handleInfoClick('rarities')}
+                                />
                             </div>
                 </div>
             </div>
+
+            <InfoModal 
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                type={modalType as any} // Type assertion to match InfoModal props
+            />
         </div>
     )
 }
