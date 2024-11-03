@@ -113,7 +113,7 @@ export default function Personalize(){
                         </>
                     )}
 
-<div className=" flex items-center gap-4">
+                            <div className=" flex items-center gap-4 pb-4">
                                 <h1 className="underline tracking-[0.3em] text-[#977154] text-lg">RARITIES</h1>
                                 <Image src={'/assets/info.svg'} height={15} width={20} alt="questions" className=""
                                      onClick={() => handleInfoClick('rarities')}

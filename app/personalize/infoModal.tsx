@@ -12,6 +12,7 @@ type ContentMap = {
   lock: ContentType;
   rarities: ContentType;
   mint: ContentType;
+  collaborations: ContentType;
 };
 
 interface InfoModalProps {
@@ -60,6 +61,16 @@ const content: ContentMap = {
       "Forever Harambe is the creative journey of visionary and creator Jenny Wealth",
       "Forever pushing the boundaries of Generative Art Jenny",
       "aims to leverage the power of blockchain to bring new life to the NFT space ",
+    ]
+  },
+  collaborations: {
+    title: "",
+    lines: [
+      "Forever Harambe is redefining collaborations",
+      "Leveraging our own smart contracts,",
+      "we aim to partner with the hottest collections",
+      "to create unique 1 of 1’s that pay contributing artists",
+      "DM for inquiries: @harambe_nfts on X"
     ]
   }
 };

@@ -28,7 +28,7 @@ export default function NowMinting() {
     const totalPrice = (quantity * PRICE_PER_ITEM).toFixed(2);
 
     return(
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center px-6">
             <div className="flex items-center text-4xl md:tracking-[0.3em] absolute top-20 font-extrabold text-white">
                 <h1>MINTING NOW</h1>
             </div>

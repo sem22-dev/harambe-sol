@@ -12,7 +12,7 @@ export default function Collections(){
                        <User size={32} className="ml-14"/>
                 </div>
 
-                <div className="mt-[170px] flex flex-col md:flex-row items-center justify-end gap-32 w-1/2 ml-64">
+                <div className="mt-[170px] flex flex-col md:flex-row items-center justify-center lg:justify-end gap-32 md:w-1/2 md:ml-64">
                     <div className="flex flex-col items-center">
                         <h1 className="text-2xl tracking-[0.3em] text-center font-light py-1">FOREVER HARAMBE</h1>
                         <Image src={'/assets/forever-harambe.png'} width={1000} height={200} alt="harambe" className=" w-[400px] flex-shrink-0"/>
