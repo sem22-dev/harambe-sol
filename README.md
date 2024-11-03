@@ -1,7 +1,7 @@
-routes : 
-    /personalize
-    /collections
-    /now-minting
-    /gallery
-    /log-in
-    /coming-soon
+routes :
+/personalize
+/collections
+/now-minting
+/gallery
+/log-in
+/coming-soon
